@@ -53,14 +53,28 @@ void levelorder(struct node* root,int level){
         if(level>0){
     levelorder(root->left,level-1);
     levelorder(root->right,level-1);
+    // printf("\n");
     }
 }
 
-
+int parent(struct node* root,struct node* par,int ele){
+    if(root->data==ele){
+        return par->data;
+    }
+    else if(ele>root->data){
+        return parent(root->right,root,ele);
+    }
+    else if(ele<root->data){
+        return parent(root->left,root,ele);
+    }
+    return -1;
+}
 void callevelorder(struct node* root){
 
 int h=height(root);
+
 int i;
+
 for(i=0;i<h;i++){
     levelorder(root,i);
     }
@@ -88,5 +102,6 @@ int main(){
     }
     // inorder(root);
     callevelorder(root);
+    printf("%d",parent(root,root,11));
 
 }
