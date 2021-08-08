@@ -44,6 +44,19 @@ int height(struct node* root){
         return lh+1;
 }
 
+int parent(struct node* root,struct node* par,int ele){
+    
+    if(root->data==ele){
+        return par->data;
+    }
+    else if(ele>root->data){
+        return parent(root->right,root,ele);
+    }
+    else if(ele<root->data){
+        return parent(root->left,root,ele);
+    }
+    return -1;
+}
 
 void levelorder(struct node* root,int level){
     if(root==NULL)
@@ -57,18 +70,7 @@ void levelorder(struct node* root,int level){
     }
 }
 
-int parent(struct node* root,struct node* par,int ele){
-    if(root->data==ele){
-        return par->data;
-    }
-    else if(ele>root->data){
-        return parent(root->right,root,ele);
-    }
-    else if(ele<root->data){
-        return parent(root->left,root,ele);
-    }
-    return -1;
-}
+
 void callevelorder(struct node* root){
 
 int h=height(root);

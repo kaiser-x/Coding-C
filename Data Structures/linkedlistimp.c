@@ -36,6 +36,8 @@ struct node* insert_at_pos(struct node* head,int x,int pos){
 	return head;
 }
 
+
+
 struct node *insert_at_end(struct node* head,int x)
 {
 	struct node *nn=newnode(x);

@@ -6,15 +6,41 @@
 #include<stdbool.h>
 bool subset(int arr[],int n,int sum){
     if(sum==0)
-        return 1;
+        return true;
     if(sum!=0&&n==0)
-        return 0;
+        return false;
+        
     if(arr[n-1]>sum)
         return subset(arr,n-1,sum);
 
     return subset(arr,n-1,sum)|| subset(arr,n-1,sum-arr[n-1]);
 
 }
+
+// //Using DP
+
+// bool subsetdp(int arr[],int n,int sum){
+
+//     bool dp[n+1][sum+1];
+
+//     for(int i=0;i<sum+1;i++){
+//         dp[0][i]=false;
+//     }
+//     for(int i=0;i<sum+1;i++){
+//         dp[i][0]=true;
+//     }
+
+//         for(int i=0;i<n+1;i++){
+//             for(int j=0;j<sum+1;j++){
+
+//                 if(arr[i][j]>=sum){
+
+
+//                 }
+
+//             }
+//         }
+// }
 
 int main(){
     int n;
