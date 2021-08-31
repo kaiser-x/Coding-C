@@ -13,8 +13,6 @@
 //the suffix array has minority ele=majority ele, that's the intution behind this
 
         
-
-
 #include<stdio.h>
 
 int main(){
@@ -39,3 +37,30 @@ int main(){
 
     printf("\n:%d",ele);
 }
+
+// int main(){
+// int max=0,ele,count;
+// int n;
+// scanf("%d",&n);
+// int arr[n];
+// for(int i=0;i<n;i++)
+//     scanf("%d",&arr[i]);
+// for(int i=0;i<n;i++){
+//     count=0;
+//     for(int j=0;j<n;j++){
+//         if(i!=j)
+//         {
+//         if(arr[i]==arr[j])
+//             count++;        
+//         }
+//     }
+//     if(count>max){
+//     max=count;
+//      ele=arr[i];;
+//       }
+//     }
+// if(max!=0)
+//     printf("%d",ele);
+// else    printf("-1");
+
+// }
