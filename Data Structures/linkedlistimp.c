@@ -45,15 +45,12 @@ struct node *insert_at_end(struct node* head,int x)
 		head=nn;
 	else{
 		struct node* ptr=head;
-
-
 		while (ptr->next!=NULL)
 		{
 			ptr=ptr->next;
 		}
-
-
 		ptr->next=nn;
+
 		
 	}
 	return head;
@@ -122,7 +119,6 @@ struct node* rev(struct node* head){
 			head->next=ptr;
 			ptr=head;
 			head=nxt;
-
 		}
 		return ptr;
 		
